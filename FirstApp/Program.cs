@@ -6,16 +6,12 @@ int GetNumber()
     return Convert.ToInt32(Console.ReadLine());
 }
 int number = Math.Abs(GetNumber());
-if (number / 10000 % 10 == number % 10 && number / 1000 % 10 == number / 10 % 10)
-    {
-        Console.WriteLine("Заданное число является палиндромом");
-    }
-    else 
-    {
-        Console.WriteLine("Заданное число не является палиндромом");
-    }
-if (number > 99999)
+if (number <= 99999 && number > 9999)
 {
-    Console.WriteLine("Необходимо ввести пятизначное число!");
+    if (number / 10000 == number % 10 && number / 1000 % 10 == number / 10 % 10)
+        Console.WriteLine("Заданное число является палиндромом");
+    else
+        Console.WriteLine("Заданное число не является палиндромом");
 }
-
+else
+    Console.WriteLine("Необходимо ввести пятизначное число!");
